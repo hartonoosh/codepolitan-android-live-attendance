@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:focusableInTouchMode="false"
     tools:context=".views.login.LoginActivity">
 
     <LinearLayout
@@ -31,13 +32,12 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            app:hintEnabled="false"
+            app:hintEnabled="true"
             android:layout_marginTop="24dp">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_email_login"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/bg_edit_text"
                 android:hint="@string/email"
                 android:paddingStart="16dp"
@@ -49,21 +49,22 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            app:hintEnabled="false"
+            app:hintEnabled="true"
             app:endIconMode="password_toggle"
             android:layout_marginTop="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_password_login"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/bg_edit_text"
                 android:hint="@string/password"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:inputType="textEmailAddress"/>
+                android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <Button
             android:id="@+id/btn_forgot_password"

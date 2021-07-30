@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.liveattendanceapp.R
+import com.example.liveattendanceapp.databinding.FragmentAttendanceBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -17,13 +18,21 @@ class AttendanceFragment : Fragment(), OnMapReadyCallback {
 
     private var mapAttendance: SupportMapFragment? = null
     private var map: GoogleMap? = null
+    //
+    private var binding: FragmentAttendanceBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_attendance, container, false)
+        binding = FragmentAttendanceBinding.inflate(inflater, container, false)
+        return binding?.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
