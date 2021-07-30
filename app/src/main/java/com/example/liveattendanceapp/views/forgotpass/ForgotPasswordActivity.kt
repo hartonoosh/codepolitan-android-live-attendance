@@ -11,14 +11,23 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_forgot_password)
+        binding = ActivityForgotPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         init()
+        //Tambahkan Function onClick
+        onClick()
 
     }
 
-//    untuk membuat tombol kembali di top bar secara custom
+    //Function Onclick
+    private fun onClick() {
+        binding.tbForgotPassword.setNavigationOnClickListener {
+            finish()
+        }
+    }
+
+    //    untuk membuat tombol kembali di top bar secara custom
     private fun init() {
         setSupportActionBar(binding.tbForgotPassword)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
